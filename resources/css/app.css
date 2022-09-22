@@ -1,3 +1,16 @@
+@font-face {
+    font-family: "proxima-nova";
+    font-style: "normal";
+    font-weight: "400";
+    src: url("/font/proxima-nova/proxima nova font.otf"); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: "Verdana";
+    font-style: "normal";
+    font-weight: "400";
+    src: url("/font/verdana/verdana.otf"); /* IE9 Compat Modes */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
