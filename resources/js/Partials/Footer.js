@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "@inertiajs/inertia-react";
-import InstagramIcon from "/icons/instagram.svg";
-import YoutubeIcon from "/icons/youtube.svg";
-import Linkedin from "/icons/linkedin.svg";
+import { FaYoutube, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
     return (
@@ -21,42 +19,22 @@ function Footer() {
                         <a>About</a>
                     </Link>
                 </div>
-                <div className="w-full sm:w-auto flex flex-col">
+                <div className="w-full sm:w-auto flex flex-col gap-y">
                     <Link href={"/home"}>
                         <div className="flex gap-3 items-center">
-                            <img
-                                src={InstagramIcon}
-                                height={30}
-                                width={30}
-                                style={{ background: "white" }}
-                            />
-                            {/* <InstagramIcon /> */}
+                            <FaInstagram className="text-2xl" />
                             <span>kbmti_ub</span>
                         </div>
                     </Link>
                     <Link href={"/home"}>
                         <div className="flex gap-3 items-center">
-                            <img
-                                src={YoutubeIcon}
-                                alt=""
-                                height={30}
-                                width={30}
-                                style={{ background: "white" }}
-                            />
-                            {/* <YoutubeIcon /> */}
+                            <FaYoutube className="text-2xl" />
                             <span>KBMTI UB</span>
                         </div>
                     </Link>
                     <Link href={"/#"}>
                         <div className="flex gap-3 items-center">
-                            <img
-                                src={Linkedin}
-                                alt=""
-                                height={30}
-                                width={30}
-                                style={{ background: "white" }}
-                            />
-                            {/* <Linkedin /> */}
+                            <FaLinkedin className="text-2xl" />
                             <span>LinkedIn</span>
                         </div>
                     </Link>
