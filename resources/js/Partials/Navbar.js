@@ -14,17 +14,16 @@ function Navbar() {
                         <strong>KBMTI</strong> 2022
                     </Link>
                 </div>
-                <div className="hidden space-x-0 sm:-my-px sm:ml-10 sm:flex">
-                    <div className="self-center">
-                        <NavLink href={route("home")} active={false}>
-                            HOME
-                        </NavLink>
-                    </div>
-                    <div className="self-center">
-                        <NavLink href={route("about")} active={false}>
-                            ABOUT
-                        </NavLink>
-                    </div>
+                <div className="hidden space-x-0 sm:-my-px sm:ml-10 sm:flex sm:items-center gap-4 ">
+                    <NavLink href={route("home")} active={false}>
+                        Home
+                    </NavLink>
+                    <NavLink href={route("about")} active={false}>
+                        About
+                    </NavLink>
+                    <NavLink href={route("register-staff-muda")} active={false}>
+                        Registrasi Staff Muda
+                    </NavLink>
                 </div>
                 <div className="-mr-2 flex items-center sm:hidden ">
                     <button
