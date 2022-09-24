@@ -31,6 +31,9 @@ Route::middleware("guest")->group(function () {
     Route::get('/coming-soon', function () {
         return Inertia::render('Sth/ComingSoon');
     });
+    Route::get('/registrasi-staff-muda', function () {
+        return Inertia::render('Sth/RegisterStaffMuda');
+    });
 });
 
 
