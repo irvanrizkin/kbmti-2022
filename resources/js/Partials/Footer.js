@@ -19,7 +19,7 @@ function Footer() {
                         <a>About</a>
                     </Link>
                 </div>
-                <div className="w-full sm:w-auto flex flex-col gap-y">
+                <div className=" w-full sm:w-auto flex flex-col gap-y-3">
                     <Link href={"/home"}>
                         <div className="flex gap-3 items-center">
                             <FaInstagram className="text-2xl" />
@@ -41,7 +41,7 @@ function Footer() {
                 </div>
             </div>
             <div className="text-center mt-10">
-                <span>© KBMTI 2022 – Privacy Policy</span>
+                <span>&copy; KBMTI 2022 – Privacy Policy</span>
             </div>
         </div>
     );
