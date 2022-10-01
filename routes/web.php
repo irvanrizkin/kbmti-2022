@@ -3,7 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ComingSoonController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RegistrasiStaffMudaController;
+use App\Http\Controllers\StaffMudaController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -31,7 +31,10 @@ Route::middleware("guest")->group(function () {
     Route::get('/home', [HomeController::class, "index"])->name('home');
     Route::get('/about', [AboutController::class, "index"])->name('about');
     Route::get('/coming-soon', [ComingSoonController::class, "index"]);
-    Route::get('/registrasi-staff-muda', [RegistrasiStaffMudaController::class, "index"])->name("register-staff-muda");
+    Route::as("staff-muda.")->prefix("staff-muda")->group(function () {
+        Route::get('/', [StaffMudaController::class, "index"])->name('index');
+        Route::post('/', [StaffMudaController::class, "store"])->name("store");
+    });
 });
 
 

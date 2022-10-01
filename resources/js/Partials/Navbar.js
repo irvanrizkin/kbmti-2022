@@ -21,7 +21,7 @@ function Navbar() {
                     <NavLink href={route("about")} active={false}>
                         About
                     </NavLink>
-                    <NavLink href={route("register-staff-muda")} active={false}>
+                    <NavLink href={route("staff-muda.index")} active={false}>
                         Registrasi Staff Muda
                     </NavLink>
                 </div>
