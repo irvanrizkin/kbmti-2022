@@ -1,16 +1,27 @@
 import React from "react";
 
 export default function Button({
-    type = "submit",
+    type = "text",
     className = "",
+    variant = "fill",
+    clickHandler,
     processing,
     children,
 }) {
+    const variants = {
+        fill: "bg-bermuda hover:bg-rose-400 border border-transparent text-white ",
+        outline:
+            "bg-transparent border border-bermuda hover:bg-bermuda text-bermuda hover:text-white",
+    };
+
+    let pickedVariant = variants[variant];
+
     return (
         <button
             type={type}
+            onClick={clickHandler}
             className={
-                `inline-flex items-center px-6 py-2 bg-bermuda hover:bg-rose-400  border border-transparent rounded-md  text-white active:bg-gray-900 transition ease-in-out duration-150 ${
+                `${pickedVariant} inline-flex items-center px-6 py-2 rounded-md transition ease-in-out duration-150 ${
                     processing && "opacity-25"
                 } ` + className
             }
