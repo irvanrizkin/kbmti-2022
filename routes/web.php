@@ -28,7 +28,7 @@ Route::get('/', function () {
     ]);
 });
 Route::middleware("guest")->group(function () {
-    Route::get('/home', [HomeController::class, "index"])->name('home');
+    Route::get('/', [HomeController::class, "index"])->name('home');
     Route::get('/about', [AboutController::class, "index"])->name('about');
     Route::get('/coming-soon', [ComingSoonController::class, "index"]);
     Route::as("staff-muda.")->prefix("staff-muda")->group(function () {

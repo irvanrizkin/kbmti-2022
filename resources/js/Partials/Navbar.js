@@ -10,7 +10,10 @@ function Navbar() {
         <nav className="flex flex-wrap overflow-x-hidden justify-center">
             <div className="flex w-full md:w-[85rem] px-10 justify-between h-[120px] items-center overflow-hidden">
                 <div className="shrink-0 flex items-center font-sans">
-                    <Link href="/" className="tracking-wider text-2xl">
+                    <Link
+                        href={route("home")}
+                        className="tracking-wider text-2xl"
+                    >
                         <strong>KBMTI</strong> 2022
                     </Link>
                 </div>
