@@ -53,8 +53,7 @@ function RegisterStaffMuda(props) {
         else setIsNotif(false);
     }, [props.flash, hasErrors]);
 
-    const submit = (e) => {
-        e.preventDefault();
+    const submit = () => {
         post(route("staff-muda.store"));
 
         if (!wasSuccessful) {
