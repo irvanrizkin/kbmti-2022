@@ -19,14 +19,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+
 Route::middleware("guest")->group(function () {
     Route::get('/', [HomeController::class, "index"])->name('home');
     Route::get('/about', [AboutController::class, "index"])->name('about');
@@ -34,6 +27,8 @@ Route::middleware("guest")->group(function () {
     Route::as("staff-muda.")->prefix("staff-muda")->group(function () {
         Route::get('/', [StaffMudaController::class, "index"])->name('index');
         Route::post('/', [StaffMudaController::class, "store"])->name("store");
+        Route::get('/announcement/{nim}', [StaffMudaController::class, "show"])->name("announcment.show");
+        Route::get('/announcement', [StaffMudaController::class, "announcements"])->name("announcment");
     });
 });
 
