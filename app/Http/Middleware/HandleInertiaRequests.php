@@ -45,6 +45,9 @@ class HandleInertiaRequests extends Middleware
             'ziggy' => function () {
                 return (new Ziggy)->toArray();
             },
+            "currentRequest" => function () {
+                return url()->current();
+            }
         ]);
     }
 }
