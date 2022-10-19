@@ -27,8 +27,8 @@ Route::middleware("guest")->group(function () {
     Route::as("staff-muda.")->prefix("staff-muda")->group(function () {
         Route::get('/', [StaffMudaController::class, "index"])->name('index');
         Route::post('/', [StaffMudaController::class, "store"])->name("store");
-        Route::get('/announcement/{nim}', [StaffMudaController::class, "show"])->name("announcment.show");
-        Route::get('/announcement', [StaffMudaController::class, "announcements"])->name("announcment");
+        Route::post('/announcement', [StaffMudaController::class, "show"])->name("announcement.show");
+        Route::get('/announcement', [StaffMudaController::class, "announcements"])->name("announcement");
     });
 });
 
