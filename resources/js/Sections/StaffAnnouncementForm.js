@@ -8,7 +8,6 @@ import React, { useState } from "react";
 
 export default function StaffAnnouncementForm() {
     const { error } = usePage().props.flash;
-    console.log(error);
     const [nim, setNim] = useState(null);
     const [uniqueCode, setUniqueCode] = useState(null);
 
