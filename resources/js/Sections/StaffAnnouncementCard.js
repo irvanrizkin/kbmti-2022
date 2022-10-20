@@ -1,8 +1,6 @@
 import React from "react";
 
 function StaffAnnouncementCard({ dataStaff }) {
-    console.log(dataStaff);
-
     return (
         <div className="w-full sm:w-3/5 mb-24 lg:mb-0 lg:h-[720px] lg:overflow-y-hidden flex flex-col mx-auto px-5 py-8 ">
             <h2 className="text-3xl font-[verdana] mb-10 text-center">

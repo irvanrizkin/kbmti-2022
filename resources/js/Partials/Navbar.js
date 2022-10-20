@@ -7,7 +7,6 @@ function Navbar() {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
     const { currentRequest } = usePage().props;
-    console.log(currentRequest);
     return (
         <nav className="flex flex-wrap overflow-x-hidden justify-center">
             <div className="flex w-full md:w-[85rem] px-10 justify-between h-[120px] items-center overflow-hidden">
