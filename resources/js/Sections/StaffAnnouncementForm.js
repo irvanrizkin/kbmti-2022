@@ -1,17 +1,19 @@
 import Button from "@/Components/Button";
 import Input from "@/Components/Input";
 import { Inertia } from "@inertiajs/inertia";
+import { usePage } from "@inertiajs/inertia-react";
 import { FiAlertCircle } from "react-icons/fi";
 
 import React, { useState } from "react";
 
-export default function StaffAnnouncementForm({ error }) {
+export default function StaffAnnouncementForm() {
+    const { error } = usePage().props.flash;
     const [nim, setNim] = useState(null);
     const [uniqueCode, setUniqueCode] = useState(null);
 
     const submit = (e) => {
         e.preventDefault();
-        setNim(null);
+        setUniqueCode(null);
         setNim(null);
         Inertia.post(`/staff-muda/announcement`, {
             nim: nim,
@@ -38,6 +40,7 @@ export default function StaffAnnouncementForm({ error }) {
                     <Input
                         placeholder="2251507001323"
                         name="nim"
+                        value={nim || ""}
                         className={"w-full"}
                         handleChange={(e) => setNim(e.target.value)}
                     />
@@ -46,6 +49,7 @@ export default function StaffAnnouncementForm({ error }) {
                     <Input
                         placeholder="cl992ha0"
                         name={"unique_code"}
+                        value={uniqueCode || ""}
                         className={"w-full"}
                         handleChange={(e) => setUniqueCode(e.target.value)}
                     />
