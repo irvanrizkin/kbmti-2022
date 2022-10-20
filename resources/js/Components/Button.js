@@ -7,11 +7,17 @@ export default function Button({
     clickHandler,
     processing,
     children,
+    color = "bermuda",
 }) {
+    const colors = {
+        bermuda: "bermuda",
+        blue: "gray-800",
+    };
+    const pickedColor = colors[color];
+
     const variants = {
-        fill: "bg-bermuda hover:bg-rose-400 border border-transparent text-white ",
-        outline:
-            "bg-transparent border border-bermuda hover:bg-bermuda text-bermuda hover:text-white",
+        fill: `bg-${pickedColor} hover:bg-rose-400 border border-transparent text-white `,
+        outline: `bg-transparent border border-${pickedColor} hover:bg-bermuda text-bermuda hover:text-white`,
     };
 
     let pickedVariant = variants[variant];
@@ -21,7 +27,7 @@ export default function Button({
             type={type}
             onClick={clickHandler}
             className={
-                `${pickedVariant} inline-flex items-center px-6 py-2 rounded-md transition ease-in-out duration-150 ${
+                `${pickedVariant} text-center  items-center px-6 py-2 rounded-md transition ease-in-out duration-150 ${
                     processing && "opacity-25"
                 } ` + className
             }

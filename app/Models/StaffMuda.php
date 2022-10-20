@@ -14,6 +14,8 @@ class StaffMuda extends Model
         "nim",
         "angkatan",
         "id_line",
-        "berkas_link"
+        "berkas_link",
+        "unique_code",
+        "status"
     ];
 }

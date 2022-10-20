@@ -1,28 +1,50 @@
 import React, { useState } from "react";
 import NavLink from "@/Components/FrontPage/NavLink";
-import { Link } from "@inertiajs/inertia-react";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import ResponsiveNavLink from "@/Components/FrontPage/ResponsiveNavLink";
 
 function Navbar() {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
+    const { currentRequest } = usePage().props;
+    console.log(currentRequest);
     return (
         <nav className="flex flex-wrap overflow-x-hidden justify-center">
             <div className="flex w-full md:w-[85rem] px-10 justify-between h-[120px] items-center overflow-hidden">
                 <div className="shrink-0 flex items-center font-sans">
-                    <Link href="/" className="tracking-wider text-2xl">
+                    <Link
+                        href={route("home")}
+                        className="tracking-wider text-2xl"
+                    >
                         <strong>KBMTI</strong> 2022
                     </Link>
                 </div>
                 <div className="hidden space-x-0 sm:-my-px sm:ml-10 sm:flex sm:items-center gap-4 ">
-                    <NavLink href={route("home")} active={false}>
+                    <NavLink
+                        href={route("home")}
+                        active={currentRequest === route("home")}
+                    >
                         Home
                     </NavLink>
-                    <NavLink href={route("about")} active={false}>
+                    <NavLink
+                        href={route("about")}
+                        active={currentRequest === route("about")}
+                    >
                         About
                     </NavLink>
-                    <NavLink href={route("staff-muda.index")} active={false}>
+                    <NavLink
+                        href={route("staff-muda.index")}
+                        active={currentRequest === route("staff-muda.index")}
+                    >
                         Registrasi Staff Muda
+                    </NavLink>
+                    <NavLink
+                        href={route("staff-muda.announcement")}
+                        active={
+                            currentRequest === route("staff-muda.announcement")
+                        }
+                    >
+                        Pengumuman
                     </NavLink>
                 </div>
                 <div className="-mr-2 flex items-center sm:hidden ">
