@@ -7,7 +7,6 @@ function Navbar() {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
     const { currentRequest } = usePage().props;
-    console.log(currentRequest);
     return (
         <nav className="flex flex-wrap overflow-x-hidden justify-center">
             <div className="flex w-full md:w-[85rem] px-10 justify-between h-[120px] items-center overflow-hidden">
@@ -26,18 +25,12 @@ function Navbar() {
                     >
                         Home
                     </NavLink>
-                    <NavLink
-                        href={route("about")}
-                        active={currentRequest === route("about")}
-                    >
-                        About
-                    </NavLink>
-                    <NavLink
+                    {/* <NavLink
                         href={route("staff-muda.index")}
                         active={currentRequest === route("staff-muda.index")}
                     >
                         Registrasi Staff Muda
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink
                         href={route("staff-muda.announcement")}
                         active={
@@ -153,10 +146,10 @@ function Navbar() {
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
                             className="text-white w-full hover:text-slate-500"
-                            href={route("about")}
-                            active={route().current("about")}
+                            href={route("staff-muda.announcement")}
+                            active={route().current("staff-muda.announcement")}
                         >
-                            <p>About</p>
+                            <p>Pengumuman</p>
                         </ResponsiveNavLink>
                     </div>
                 </div>

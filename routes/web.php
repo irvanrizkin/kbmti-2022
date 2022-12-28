@@ -22,13 +22,15 @@ use Inertia\Inertia;
 
 Route::middleware("guest")->group(function () {
     Route::get('/', [HomeController::class, "index"])->name('home');
-    Route::get('/about', [AboutController::class, "index"])->name('about');
-    Route::get('/coming-soon', [ComingSoonController::class, "index"]);
+    // Route::get('/home', [HomeController::class, "index"])->name('hometest');
+    // Route::get('/about', [ComingSoonController::class, "index"])->name('about');
+    // Route::get('/coming-soon', [ComingSoonController::class, "index"]);
     Route::as("staff-muda.")->prefix("staff-muda")->group(function () {
-        Route::get('/', [StaffMudaController::class, "index"])->name('index');
-        Route::post('/', [StaffMudaController::class, "store"])->name("store");
+        // Route::get('/', [StaffMudaController::class, "index"])->name('index');
+        // Route::post('/', [StaffMudaController::class, "store"])->name("store");
         Route::post('/announcement', [StaffMudaController::class, "show"])->name("announcement.show");
         Route::get('/announcement', [StaffMudaController::class, "announcements"])->name("announcement");
+        // Route::get('/announcementbetatester', [StaffMudaController::class, "announcements"]);
     });
 });
 

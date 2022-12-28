@@ -20,8 +20,8 @@ export default function StaffAnnouncementForm({ error }) {
     };
     return (
         <div className="px-5 py-3 pt-32 mb-32 lg:m-0 lg:h-[720px] md:overflow-y-hidden flex flex-col items-center gap-y-6">
-            <h2 className="text-xl sm:text-3xl font-[verdana] mb-2 text-center">
-                PENGUMUMAN HASIL SELEKSI STAFF MUDA KBMTI 2022
+            <h2 className="text-2xl sm:text-3xl font-[proxima-nova] mb-2 text-center">
+                Pengumuman Hasil Seleksi Staff Muda KBMTI 2022
             </h2>
             <p>Masukan nim kamu di bawah buat cek hasil kamu yaa...</p>
             {error && (
@@ -36,7 +36,7 @@ export default function StaffAnnouncementForm({ error }) {
             >
                 <div className="w-full">
                     <Input
-                        placeholder="2251507001323"
+                        placeholder="NIM"
                         name="nim"
                         className={"w-full"}
                         handleChange={(e) => setNim(e.target.value)}
@@ -44,7 +44,7 @@ export default function StaffAnnouncementForm({ error }) {
                 </div>
                 <div className="w-full ">
                     <Input
-                        placeholder="cl992ha0"
+                        placeholder="Kata Sandi"
                         name={"unique_code"}
                         className={"w-full"}
                         handleChange={(e) => setUniqueCode(e.target.value)}
